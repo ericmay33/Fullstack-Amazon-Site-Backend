@@ -12,12 +12,5 @@
         "passwordHash": "77af778b51abd4a3c51c5ddd97204a9c3ae614ebccb75a606c3b6865aed6744e",
         "firstName": "Callie",
         "lastName": "Marie"
-    },
-    {
-        "id": 3,
-        "username": "ebmay",
-        "passwordHash": "77af778b51abd4a3c51c5ddd97204a9c3ae614ebccb75a606c3b6865aed6744e",
-        "firstName": "Callie",
-        "lastName": "Marie"
     }
 ]
