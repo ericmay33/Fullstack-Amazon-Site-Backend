@@ -47,7 +47,7 @@ const initializeServer = async () => {
       logError(err)
       return res.status(500).json({ error: 'Unable to get all products due to interal server error' })
     }
-  })
+  });
   
   console.log('Defining endpoint GET /products/:id')
   app.get('/products/:id', async (req, res): Promise<any> => {
@@ -63,7 +63,7 @@ const initializeServer = async () => {
       logError(err)
       return res.status(500).json({ error: 'Unable to get product due to interal server error' })
     }
-  })
+  });
 
   interface LoginRequestBody {
     username: string
@@ -125,6 +125,61 @@ const initializeServer = async () => {
       return res.status(500).json({ error: 'Unable to get user info due to interal server error' })
     }  
   })
+
+  console.log('Defining endpoint GET /cart')
+  app.get('/cart', async (req, res): Promise<any> => {
+    try {
+      if (!req.headers.token) {
+        return res.status(401).json({ error: 'Unauthorized' })
+      }
+      const token = req.headers.token as string;
+      const tokenPayload = validateAuthToken<TokenPayload>(token);
+      const user = await getUserById(tokenPayload.id);
+
+      if (!user) {
+        return res.status(401).json({ error: 'Unauthorized' })
+      }
+
+      const productIds = user.cart as number[];
+
+      const productPromises = productIds.map((id) => {
+        return productsData.getById(id);
+      });
+      const products = await Promise.all(productPromises);
+
+      return res.status(200).json(products);
+
+    } catch (err: unknown) {
+      if (err instanceof InvalidAuthTokenError) {
+        return res.status(401).json({ error: 'Unauthorized' })
+      } else {
+        logError(err);
+        return res.status(500).json({ error: 'Unable to get cart due to internal server error'});
+      }
+    }
+  });
+
+  console.log('Defining endpoint POST /cart')
+  app.post('/cart', async (req, res): Promise<any> => {
+    try {
+      if (!req.headers.token) {
+        return res.status(401).json({ error: 'Unauthorized' })
+      }
+      const token = req.headers.token as string;
+      const tokenPayload = validateAuthToken<TokenPayload>(token);
+      const user = await getUserById(tokenPayload.id);
+
+      if (!user) {
+        return res.status(401).json({ error: 'Unauthorized' })
+      }
+
+      
+
+    } catch (err: unknown) {
+      logError(err);
+      return res.status(500).json({ error: 'Unable to update cart due to internal server error'});
+    }
+  });
   
   // start express server
   app.listen(port, () => {

@@ -5,6 +5,7 @@ export interface User {
   passwordHash: string
   firstName: string
   lastName: string
+  cart: number[]
 }
 
 export async function getUserByCredentials(username: string, passwordHash: string): Promise<User | null> {
