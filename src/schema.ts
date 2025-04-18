@@ -24,6 +24,21 @@ export function getLoginRequestValidator() {
   return createValidator(schema)
 }
 
+export function getCartRequestValidator() {
+  const schema = {
+    type: 'object',
+    properties: {
+      productId: {
+        type: 'number',
+        minimum: 1
+      }
+    },
+    required: ['productId'],
+    additionalProperties: false
+  }
+  return createValidator(schema);
+}
+
 type AjvValidatorError = ErrorObject<string, Record<string, any>, unknown>[] | null | undefined
 
 export function formatAjvValidationErrors(errors: AjvValidatorError) {

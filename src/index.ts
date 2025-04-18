@@ -2,7 +2,7 @@ import express from 'express'
 import * as dotenv from 'dotenv'
 import cors from 'cors'
 import * as productsData from './products.js'
-import { formatAjvValidationErrors, getLoginRequestValidator } from './schema.js'
+import { formatAjvValidationErrors, getLoginRequestValidator , getCartRequestValidator } from './schema.js'
 import { createHash } from 'crypto'
 import { getUserByCredentials, getUserById, addUserCartItem } from './users.js'
 import { createAuthToken, validateAuthToken } from './auth.js'
@@ -159,6 +159,10 @@ const initializeServer = async () => {
     }
   });
 
+  interface cartRequestBody {
+    productId: number
+  }
+
   console.log('Defining endpoint POST /cart')
   app.post('/cart', async (req, res): Promise<any> => {
     try {
@@ -173,21 +177,15 @@ const initializeServer = async () => {
         return res.status(401).json({ error: 'Unauthorized' });
       };
 
-      if (!req.body.productId) {
-        return res.status(400).json({ error: 'Missing productId in request body' });
-      };
+      const validator = getCartRequestValidator();
+      if (!validator(req.body)) {
+        return res.status(400).json({ error: 'malformed/invalid request body', message: formatAjvValidationErrors(validator.errors) })
+      }
 
-      const productId = req.body.productId as number;
-
-      if (!Number.isInteger(productId)) {
-        return res.status(400).json({ error: 'Product ID must be a number' });
-      };
-
-      // AJV SCHEMA VALIDATION HERE (Come back to after all else finished)
-      
-      
-
+      const body = req.body as cartRequestBody;
+      const productId = body.productId;
       const product = await productsData.getById(productId) as productsData.Product;
+      
       if (!product) {
         return res.status(404).json({ error: 'Product Not Found'});
       };
