@@ -4,7 +4,7 @@ import cors from 'cors'
 import * as productsData from './products.js'
 import { formatAjvValidationErrors, getLoginRequestValidator } from './schema.js'
 import { createHash } from 'crypto'
-import { getUserByCredentials, getUserById } from './users.js'
+import { getUserByCredentials, getUserById, addUserCartItem } from './users.js'
 import { createAuthToken, validateAuthToken } from './auth.js'
 import { InvalidAuthTokenError } from './errors.js'
 
@@ -163,21 +163,49 @@ const initializeServer = async () => {
   app.post('/cart', async (req, res): Promise<any> => {
     try {
       if (!req.headers.token) {
-        return res.status(401).json({ error: 'Unauthorized' })
-      }
+        return res.status(401).json({ error: 'Unauthorized' });
+      };
       const token = req.headers.token as string;
       const tokenPayload = validateAuthToken<TokenPayload>(token);
       const user = await getUserById(tokenPayload.id);
 
       if (!user) {
-        return res.status(401).json({ error: 'Unauthorized' })
-      }
+        return res.status(401).json({ error: 'Unauthorized' });
+      };
 
+      if (!req.body.productId) {
+        return res.status(400).json({ error: 'Missing productId in request body' });
+      };
+
+      const productId = req.body.productId as number;
+
+      if (!Number.isInteger(productId)) {
+        return res.status(400).json({ error: 'Product ID must be a number' });
+      };
+
+      // AJV SCHEMA VALIDATION HERE (Come back to after all else finished)
+      
       
 
+      const product = await productsData.getById(productId) as productsData.Product;
+      if (!product) {
+        return res.status(404).json({ error: 'Product Not Found'});
+      };
+
+      if (user.cart.includes(productId)) {
+        return res.status(400).json({ error: 'Product already in user cart' });
+      };
+
+      await addUserCartItem(user.id, productId);
+      return res.status(201).json({ message: 'Added item to cart successfully' });
+
     } catch (err: unknown) {
-      logError(err);
-      return res.status(500).json({ error: 'Unable to update cart due to internal server error'});
+      if (err instanceof InvalidAuthTokenError) {
+        return res.status(401).json({ error: 'Unauthorized' })
+      } else {
+        logError(err);
+        return res.status(500).json({ error: 'Unable to update cart due to internal server error'});
+      }
     }
   });
   
