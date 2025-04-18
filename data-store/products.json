@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Cat Water Fountain",
+    "description": "Water fountain for cats to drink out of. Made of stainless steel. The dynamic water flow helps attract pet cats to drink, providing a ton of health benefits. Comes with three filters (additional filters bought separately).",
+    "category": "Pet Supplies",
+    "sellerName": "tomxcute",
+    "numberOfRatings": 12386,
+    "ratingAverage": 4.3,
+    "price": 29.99,
+    "discount": 0,
+    "images": [
+      "https://m.media-amazon.com/images/I/61IinuR0+wL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71dtPbdyk2L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71Z+PZBYudL._AC_SL1500_.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Capybara Plush",
+    "description": "Weighted capybara plush that can be heated up in the microwave. Keeps heat for hours. French lavendar scented. Weighs 2lbs. Promotes better quality sleep.",
+    "category": "Stuffed Animals",
+    "sellerName": "warmies",
+    "numberOfRatings": 7,
+    "ratingAverage": 5,
+    "price": 29.99,
+    "discount": 0,
+    "images": [
+      "https://warmies.com/cdn/shop/files/CP-CAPYBARA-0089_720x.jpg?v=1708962850",
+      "https://warmies.com/cdn/shop/files/Warmies-Q1-Lifestyle-GrantPuckett11555-Retouch_720x.jpg?v=1712252441"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Roku Streaming Device",
+    "description": "Roku HD Streaming Device. Comes with rechargeable voice remote.",
+    "category": "Television & Video",
+    "sellerName": "Roku",
+    "numberOfRatings": 1959,
+    "ratingAverage": 4.6,
+    "price": 77.98,
+    "discount": 0,
+    "images": [
+      "https://m.media-amazon.com/images/I/71ZzgLa+xFL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/81++0zUMePL._AC_SX679_.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "SpongeBob DoodleBob Hat",
+    "description": "Hat with DoodleBob (from SpongeBob) on it. Adjustable snapback. Super stylish.",
+    "category": "Clothing",
+    "sellerName": "OVERLORD",
+    "numberOfRatings": 26,
+    "ratingAverage": 5,
+    "price": 32,
+    "discount": 0,
+    "images": [
+      "https://www.overlordcaps.com/cdn/shop/files/SBDOO.0001_0b701ee2-de6c-4c79-9920-eb90f9664512.png?v=1704599554&width=1000",
+      "https://www.overlordcaps.com/cdn/shop/files/PATCH_SBDOO.png?v=1721715459&width=1000",
+      "https://www.overlordcaps.com/cdn/shop/files/SBDOO_grain.png?v=1704599554&width=1000"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Silent Hill HD Collection",
+    "description": "Video game for Xbox 360 containing ports of Silent Hill 2 (including Restless Dreams) and Silent Hill 3. Both titles re-mastered to HD at 720p. Updated in-game voiceover and enhanced soundtrack.",
+    "category": "Video Games",
+    "sellerName": "Konami Store",
+    "numberOfRatings": 680,
+    "ratingAverage": 4.5,
+    "price": 43.99,
+    "discount": 0,
+    "images": [
+      "https://m.media-amazon.com/images/I/81C8BJJamkL._SY500_.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Scooby Doo Magnet",
+    "description": "Magnet with Scooby Doo graphic consisting of the entire gang with a green funky background. Good for fridge or locker doors.",
+    "category": "Refrigerator Magnets",
+    "sellerName": "Ata-boy",
+    "numberOfRatings": 37,
+    "ratingAverage": 4.9,
+    "price": 7.49,
+    "discount": 0,
+    "images": [
+      "https://www.shopknuckleheads.com/cdn/shop/products/73865SD_500x700.jpg?v=1648746201"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Green Spotted Sea Monster Rubber Duck",
+    "description": "A rubber duck that has green spots and is \"sea monster\" theme. Good to talk through coding problems with.",
+    "category": "Toys",
+    "sellerName": "Mountain Man Treasure",
+    "numberOfRatings": 20,
+    "ratingAverage": 3.5,
+    "price": 4.99,
+    "discount": 0,
+    "images": [
+      "https://i.ebayimg.com/images/g/G8QAAOSwd9hjbWFR/s-l1600.webp"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Horse Head Mask",
+    "description": "Brown horse head mask made of latex. Large enough to fit most adults and kids heads. See through the mask's mouth and nose holes. Perfect for Halloween.",
+    "category": "Masks",
+    "sellerName": "REYINL",
+    "numberOfRatings": 416,
+    "ratingAverage": 4.2,
+    "price": 14.98,
+    "discount": 15,
+    "images": [
+      "https://m.media-amazon.com/images/I/71hinjs7hpL._AC_SX466_.jpg",
+      "https://m.media-amazon.com/images/I/51oFyz6-Z-L._AC_.jpg",
+      "https://m.media-amazon.com/images/I/71nGo8W9TGL._AC_SX466_.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Chobani Coconut Yogurt",
+    "description": "Low-fat greek yogurt with coconut blend. Yummy!",
+    "category": "Food",
+    "sellerName": "Chobani",
+    "numberOfRatings": 1603,
+    "ratingAverage": 4.7,
+    "price": 1.47,
+    "discount": 0,
+    "images": [
+      "https://m.media-amazon.com/images/I/811ZOQuzonL._SX679_.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Bose Noise Cancelling Headphones",
+    "description": "Acoustic noise cancelling over ear black headphones by Bose. Wired connectivity.",
+    "category": "Electronics",
+    "sellerName": "Bose",
+    "numberOfRatings": 3475,
+    "ratingAverage": 4.4,
+    "price": 119.95,
+    "discount": 5,
+    "images": [
+      "https://m.media-amazon.com/images/I/71BlmzJi6DL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/71Pww3IzDxL._AC_SL1200_.jpg",
+      "https://m.media-amazon.com/images/I/61Kkjo1W6mL._AC_SL1200_.jpg"
+    ]
+  }
+]
